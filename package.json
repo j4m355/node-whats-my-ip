@@ -1,0 +1,18 @@
+{
+  "name": "node-server-resource-monitor",
+  "version": "0.0.0",
+  "description": "Realtime running processes on the server rendered in the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "coffee-script": "~1.4.0",
+    "nconf": "~0.6.7",
+    "express": "3.x",
+    "jade" : "*"
+  },
+  "repository": "git@github.com:j4m355/node-process-top.git",
+  "author": "j4m355",
+  "license": "Apache"
+}
