@@ -1,7 +1,7 @@
 !!! 5
 html
   head
-    title Whats my ip
+    title Node Process Top
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=false')
     meta(name='apple-mobile-web-app-capable', content='yes')
@@ -12,27 +12,29 @@ html
     script(type='text/javascript', src='js/jquery.mobile-1.0.min.js')
     script
       $(document).ready(function(){
-      
+      new get_fb();
       });
       function get_fb(){
       var feedback = $.ajax({
-      type: "post",
-      data: {pcName: $("#pcName").val()
-      },
-      url: "/query",
+      type: "get",
+      url: "/top",
       async: false
+      }).complete(function(){
+      setTimeout(function(){get_fb();}, 3000);
       }).responseText;
       $('#result').html(feedback);
       }
   body     
     div(data-role='page')
       header(data-role='header')
-        h1 Enter PC name
+        h1 Currently Running Processes
         hr.divider
-        form(action="/query", method="post")
-          input#pcName(type="text", name="pcName")
-          button#submit(type="submit") Search
 
       textarea#result(style='color: black !important;')
+        
+      
+        h4 Words
+        p
+          | See this shit on github.
 
 
