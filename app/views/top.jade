@@ -12,7 +12,10 @@ html
     script(type='text/javascript', src='js/jquery.mobile-1.0.min.js')
     script
       $(document).ready(function(){
-      
+         $("#submit").click(function()
+        {          
+          new get_fb();
+        });
       });
       function get_fb(){
       var feedback = $.ajax({
@@ -28,10 +31,9 @@ html
     div(data-role='page')
       header(data-role='header')
         h1 Enter PC name
-        hr.divider
-        form(action="/query", method="post")
-          input#pcName(type="text", name="pcName")
-          button#submit(type="submit") Search
+        hr.divider        
+        input#pcName(type="text", name="pcName")
+        button#submit(type="submit") Search
 
       textarea#result(style='color: black !important;')
 
